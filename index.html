@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9ff">
+  <meta name="description" content="Organizá encuentros de estudio en Club Punto y Aparte.">
+  <title>Encuentros de estudio | Punto y Aparte</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar panel" id="inicio">
+      <a class="brand" href="#inicio" aria-label="Punto y Aparte, inicio">
+        <span class="brand-mark" aria-hidden="true">P<span>.</span>A</span>
+        <span class="brand-name">Punto y Aparte</span>
+      </a>
+      <p class="topbar-label">Agenda del club</p>
+    </header>
+
+    <section class="welcome panel" id="bienvenida" aria-labelledby="welcome-title">
+      <div>
+        <p class="eyebrow">UN LUGAR PARA PENSAR EN COMPAÑÍA</p>
+        <h1 id="welcome-title">Elegí un momento<br class="desktop-break"> para avanzar.</h1>
+        <p class="welcome-copy">Reservas de demostración para grupos de estudio.</p>
+      </div>
+      <div class="welcome-art" aria-hidden="true">
+        <span class="art-sun"></span><span class="art-book art-book--one"></span><span class="art-book art-book--two"></span>
+      </div>
+    </section>
+
+    <section class="booking-panel panel" aria-labelledby="booking-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">TU PRÓXIMO PASO</p><h2 id="booking-title">Armá tu encuentro</h2></div>
+        <span class="step-badge" aria-hidden="true">01</span>
+      </div>
+      <form id="formulario-reserva" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="persona">Tu nombre</label>
+            <input id="persona" name="persona" type="text" autocomplete="name" placeholder="¿Cómo te llamás?" required>
+          </div>
+          <div class="field">
+            <label for="dia">Fecha</label>
+            <input id="dia" name="dia" type="date" required>
+          </div>
+          <div class="field">
+            <label for="espacio">Espacio</label>
+            <select id="espacio" name="espacio" required>
+              <option value="" selected disabled>Elegí un espacio</option>
+              <option>Sala de proyectos</option>
+              <option>Rincón de repaso</option>
+            </select>
+          </div>
+          <div class="field time-field">
+            <label for="hora-desde">Desde</label>
+            <input id="hora-desde" name="hora-desde" type="time" required>
+          </div>
+          <div class="field time-field">
+            <label for="hora-hasta">Hasta</label>
+            <input id="hora-hasta" name="hora-hasta" type="time" required>
+          </div>
+          <div class="field">
+            <label for="tema">¿Qué vamos a estudiar?</label>
+            <input id="tema" name="tema" type="text" placeholder="Tema o materia" required>
+          </div>
+        </div>
+        <div class="form-footer">
+          <p id="aviso" class="notice" role="status" aria-live="polite" hidden></p>
+          <button class="button button--primary" type="submit">Reservar encuentro <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+
+    <div class="lower-grid">
+      <section class="agenda-panel panel" aria-labelledby="agenda-title">
+        <div class="section-heading section-heading--compact">
+          <div><p class="eyebrow">ENCUENTROS PROGRAMADOS</p><h2 id="agenda-title" tabindex="-1">La agenda</h2></div>
+          <span class="calendar-mark" aria-hidden="true">▦</span>
+        </div>
+        <div id="agenda" class="agenda-list" aria-live="polite"></div>
+      </section>
+
+      <aside id="comprobante" class="receipt-panel panel" aria-labelledby="receipt-title" hidden>
+        <p class="eyebrow">TODO EN ORDEN</p>
+        <div class="receipt-icon" aria-hidden="true">✓</div>
+        <h2 id="receipt-title">Tu encuentro<br>está reservado</h2>
+        <div id="receipt-content" class="receipt-content"></div>
+        <button id="print-receipt" class="button button--outline" type="button"><span aria-hidden="true">⌑</span> Imprimir comprobante</button>
+        <p class="receipt-footnote">¡Nos vemos para estudiar!</p>
+      </aside>
+    </div>
+    <footer class="page-footer"><span>Club Punto y Aparte</span><span>Un paso a la vez, en compañía.</span></footer>
+  </main>
+</body>
+</html>
